@@ -1,12 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Routes, Route, Router  } from "react-router-dom";
-//import { Route } from 'react-router';
-//import { Layout } from './components/Layout';
-//import { Home } from './components/Home';
-//import { FetchData } from './components/FetchData';
-//import { Counter } from './components/Counter';
-import Navbar from "./components/Navbar.js";
+import { BrowserRouter, Switch, Routes, Route  } from "react-router-dom";
 import Cart from "./components/Cart.js";
 
 import About from "./components/About.js";
@@ -15,12 +9,6 @@ import ProductDetails from "./components/ProductDetails.js";
 
 
 import  Header  from './components/Header.js';
-import { NameInfo } from './components/NameInfo';
-import { AboutInfo } from './components/AboutInfo';
-import { Work } from './components/Work';
-import { Contact } from './components/Contact';
-import {Footer } from './components/Footer';
-import Home from "./components/Home.js";
 import Portfolio from "./components/Portfolio.js";
 import Store from "./components/Store.js";
 
@@ -83,24 +71,10 @@ export default function App() {
                     onProductAdd={handleProductAdd}
                     onProductDelete={handleProductDelete}
                   />} /> 
+                     <Route path="/products/:id/*" element={ <ProductDetails  cart={cart} onProductAdd={handleProductAdd} />} /> 
                  <Route path='/about' element={<About cart={cart}/>} />
                  <Route exact path="cart" element={ <Cart cart={cart} />} />
               </Routes>
           </BrowserRouter>
-      //     <BrowserRouter>
-      //     <div className="container">
-      //   <Routes>
-         
-       
-      //         <Route exact path="/" element={<Home />} />
-      //         <Route exact path="/about" element={<About />} />
-       
-      //         <Route path="/products/:id/*" element={ <ProductDetails />} /> 
-           
-            
-          
-      //   </Routes>
-      //   </div>
-      // </BrowserRouter>
     );
   }

@@ -4,6 +4,7 @@ import useFetch from "./useFetch.js";
 import ProductDetailInfo from "./ProductDetailInfo.js";
 import ProductDetailNutrition from "./ProductDetailNutrition.js";
 import ProductDetailStorage from "./ProductDetailStorage.js";
+import Navbar from "./Navbar.js";
 
 export default function ProductDetails(props) {
   const params = useParams();
@@ -20,6 +21,9 @@ export default function ProductDetails(props) {
   }, []);
 
   return (
+    <>
+       <Navbar cart={props.cart} />
+ 
     <div className="product-details-layout">
       <div>
         <h2>{product.name}</h2>
@@ -83,5 +87,6 @@ export default function ProductDetails(props) {
         </Routes>
       </div>
     </div>
+    </>
   );
 }
