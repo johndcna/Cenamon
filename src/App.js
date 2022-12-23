@@ -75,6 +75,7 @@ export default function App() {
               <Header />
               <Routes>
                   <Route exact path="/" element={<Portfolio />} />
+                  <Route exact path="/Cenamon" element={<Portfolio />} />
                   <Route path="/store" element={<Store />} />
                  
                   <Route exact path="/products" element={<Products
