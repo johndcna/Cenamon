@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Cenamon/static/css/main.9f9ac9c5.css",
-    "main.js": "/Cenamon/static/js/main.3de84b24.js",
+    "main.js": "/Cenamon/static/js/main.3cc354ab.js",
     "static/js/787.05af7a52.chunk.js": "/Cenamon/static/js/787.05af7a52.chunk.js",
     "index.html": "/Cenamon/index.html",
     "main.9f9ac9c5.css.map": "/Cenamon/static/css/main.9f9ac9c5.css.map",
-    "main.3de84b24.js.map": "/Cenamon/static/js/main.3de84b24.js.map",
+    "main.3cc354ab.js.map": "/Cenamon/static/js/main.3cc354ab.js.map",
     "787.05af7a52.chunk.js.map": "/Cenamon/static/js/787.05af7a52.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f9ac9c5.css",
-    "static/js/main.3de84b24.js"
+    "static/js/main.3cc354ab.js"
   ]
 }
