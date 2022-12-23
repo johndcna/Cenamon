@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { loadStripe } from "@stripe/stripe-js";
 import Input from "./Input.js";
 import Button from "./Button.js";
+import Navbar from "./Navbar.js";
 
 // const stripeLoadedPromise = loadStripe(
 //   "pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate"
@@ -43,6 +44,8 @@ export default function Cart({ cart }) {
 //   }
 
   return (
+    <>
+         <Navbar cart={cart} />
     <div className="cart-layout">
       <div>
         <h1>Your Cart</h1>
@@ -110,5 +113,6 @@ export default function Cart({ cart }) {
         )}
       </div>
     </div>
+    </>
   );
 }

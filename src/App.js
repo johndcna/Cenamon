@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Routes, Route, Router  } from "react-router-dom";
 //import { Route } from 'react-router';
 //import { Layout } from './components/Layout';
@@ -27,50 +28,46 @@ import Store from "./components/Store.js";
 import './style.css';
 import './index.css';
 
-export default class App extends Component {
+export default function App() {
 
-    constructor(props) {
-        super(props);
-        this.state = { cart: [] };
-    }
+    const [cart, setCart] = useState([]);
 
-    handleProductDelete(id) {
-        const updatedCart = this.state.cart.filter((product) => product.id !== id);
-        this.state.setCart(updatedCart);
+    function handleProductDelete(id) {
+      const updatedCart = cart.filter((product) => product.id !== id);
+      setCart(updatedCart);
     }
-
-    handleProductAdd(newProduct) {
-        // check if item exists
-        const existingProduct = this.state.cart.find(
-            (product) => product.id === newProduct.id
-        );
-        if (existingProduct) {
-            // increase quantity
-            const updatedCart = this.state.cart.map((product) => {
-                if (product.id === newProduct.id) {
-                    return {
-                        ...product,
-                        quantity: product.quantity + 1,
-                    };
-                }
-                return product;
-            });
-            this.state.setCart(updatedCart);
-        } else {
-            // product is new to the cart
-            this.state.setCart([
-                ...this.state.cart,
-                {
-                    ...newProduct,
-                    quantity: 1,
-                },
-            ]);
-        }
-    }
-    static displayName = App.name;
   
+    function handleProductAdd(newProduct) {
+      // check if item exists
+      const existingProduct = cart.find(
+        (product) => product.id === newProduct.id
+      );
+      if (existingProduct) {
+        // increase quantity
+        const updatedCart = cart.map((product) => {
+          if (product.id === newProduct.id) {
+            return {
+              ...product,
+              quantity: product.quantity + 1,
+            };
+          }
+          return product;
+        });
+        setCart(updatedCart);
+      } else {
+        // product is new to the cart
+        setCart([
+          ...cart,
+          {
+            ...newProduct,
+            quantity: 1,
+          },
+        ]);
+      }
+    
+    }
 
-    render() {
+
 
       return (
 
@@ -80,8 +77,13 @@ export default class App extends Component {
                   <Route exact path="/" element={<Portfolio />} />
                   <Route path="/store" element={<Store />} />
                  
-                  {/* <Route exact path="/products" element={<Products/>} /> */}
-                 <Route path='/about' element={<About cart={this.state.cart}/>} />
+                  <Route exact path="/products" element={<Products
+                    cart={cart}
+                    onProductAdd={handleProductAdd}
+                    onProductDelete={handleProductDelete}
+                  />} /> 
+                 <Route path='/about' element={<About cart={cart}/>} />
+                 <Route exact path="cart" element={ <Cart cart={cart} />} />
               </Routes>
           </BrowserRouter>
       //     <BrowserRouter>
@@ -101,4 +103,3 @@ export default class App extends Component {
       // </BrowserRouter>
     );
   }
-}
