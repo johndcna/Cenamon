@@ -2,7 +2,7 @@
   --white: #fff;
   --black: #000;
   /* Primary colors*/
-  --primary-1: #2b8379;
+  --primary-1: #1d50c3;
   --primary-2: #19a596;
   --primary-3: #7fd1c7;
   --primary-4: #7fd1c7;
@@ -14,10 +14,10 @@
   --neutral-4: #d9cfd3;
   --neutral-5: #f2ecee;
   /* Accent-blue colors */
-  --accent-1: #970e3d;
-  --accent-2: #c43464;
-  --accent-3: #de7699;
-  --accent-4: #e6c3ce;
+  --accent-1: #4374e9;
+  --accent-2: #466cc5;
+  --accent-3: #9fb6eb;
+  --accent-4: #8092bd;
   --accent-5: #fff2f7;
 }
 
@@ -211,18 +211,18 @@ input:focus {
       color: var(--primary-1);
   }
 
-div.store-navbar > .navbar ul {
+div.store-navbar > ul {
   list-style-type: none !important;
   overflow: hidden !important;
   padding-right: 20px !important;
   text-align: center !important;
 }
 
-div.store-navbar > .navbar li {
-  display: inline-block !important;
+div.store-navbar > ul > li {
+  display: inline-block;
 }
 
-div.store-navbar > .nav-item a {
+.nav-item a {
   text-decoration: none;
   font-weight: normal;
   color: var(--primary-1);
@@ -237,11 +237,11 @@ div.store-navbar > .nav-item a {
   color: var(--primary-2);
 }
 
-.nav-item a.active {
+div.store-navbar > .nav-item a.active {
   font-weight: bold;
 }
 
-.nav-cart {
+div.store-navbar > .nav-cart {
   width: 65px;
   text-align: center;
   padding: 10px 25px;
@@ -297,7 +297,16 @@ div.store-navbar > .nav-item a {
 .products-layout {
   padding-top: 40px;
   padding-bottom: 40px;
+  max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+.about-layout, .cart-layout {
+  max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 
 .product-details-layout {
   padding-top: 40px;

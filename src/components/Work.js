@@ -3,7 +3,7 @@ export default function  Work() {
 
 
         return (
-            <div id="work" className="container-fluid  text-center " style={{ backgroundColor: "white", paddingBottom: "3%" }}>
+            <div id="work" className="container-fluid  text-center " style={{ backgroundColor: "#d5af8e9e", paddingBottom: "3%" }}>
                 <div className="row" style={{ marginBottom: "5%" }}>
                     <h3 className="heading" style={{ margin: "5%" }}>Store React Application</h3>
                     <div className="container" style={{ margin: "6%" }}>

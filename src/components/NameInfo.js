@@ -4,7 +4,7 @@ export default function NameInfo() {
 
 
         return (
-            <div id="section2" className="container-fluid jumbotron text-center font-style section-name">
+            <div id="name-info" className="container-fluid jumbotron text-center font-style section-name">
                 <h1>Hello!</h1>
                 <h1 className="section-display">I am</h1>
                 <h1 className="section-display section-color"> John Decena</h1>
