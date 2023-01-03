@@ -54,7 +54,7 @@ export default function Footer() {
 				</p>
 			
 			</div>
-
+            <a href="#name-info" className="topButton"><span className="material-icons" >arrow_upward</span></a>
         </div>
         );
 }
