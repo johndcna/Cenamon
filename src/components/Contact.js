@@ -4,8 +4,8 @@ export default function Contact() {
 
 
         return (
-            <div id="contact" className="container-fluid text-center" style={{ paddingBottom: "3%", backgroundColor: "#f5f5f5" }}>
-                <h1 className="heading">CONTACT</h1>
+            <div className="container-fluid text-center" style={{ paddingBottom: "3%", backgroundColor: "#f5f5f5" }}>
+                {/* <h1 className="heading">CONTACT</h1>
                 <hr className="solid" />
                 <a href="#name-info" className="topButton"><span className="material-icons" >arrow_upward</span></a>
                 {/*<p style="color: #67676e;;">Feel free to contact me.</p>*/}
@@ -14,7 +14,7 @@ export default function Contact() {
                 {/*   <!---Add email link like mailto:someone@example.com -->*/}
                 <a href=" " style={{ backgroundColor: "#E60023" }} className="contactIcons"><i className="fa fa-at"></i></a>
                 <a href=" " style={{ backgroundColor: "#0077b5" }} className="contactIcons"><i className="fa fa-linkedin-square"></i></a>
-                <a href=" " style={{ backgroundColor: "#1DA1F2" }} className="contactIcons"><i className="fa fa-twitter"></i></a>
+                <a href=" " style={{ backgroundColor: "#1DA1F2" }} className="contactIcons"><i className="fa fa-twitter"></i></a> */}
             </div>
         );
 }

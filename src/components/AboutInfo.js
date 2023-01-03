@@ -9,7 +9,7 @@ export default function AboutInfo() {
             <div id="about" className="container-fluid text-center about-color" >
                 <h1 className="heading">ABOUT</h1>
                 <hr className="solid" />
-                <p className="info">I am an experience full-stack .NET developer. I have more than 6 years in developing web applications using .NET platform. I work with ASP.NET MVC (4 and 5.2), ASP.NET Web API (1.0 and 2.0), .NET core (1.0 and 2.0). I am passionate about developing applications to make sure my clients are satisfied when they are using the product.</p>
+                <p className="info">I am an experienced full-stack .NET developer. I have more than six years of experience developing web applications using the .NET platform. I work with ASP.NET MVC (4 and 5.2), ASP.NET Web API (1.0 and 2.0), and .NET core (1.0 and 2.0). I am passionate about developing applications to ensure my clients are satisfied when using the product.</p>
                 <div className="row">
                     <div className="col-sm-12 col-md-4 col-lg 4 thumb">
                         <img  src={'/Cenamon/pic.jpg'} className="zoom img-fluid " alt="mypic" />

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Routes, Route  } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Cart from "./components/Cart.js";
 
 import About from "./components/About.js";
@@ -12,7 +12,6 @@ import  Header  from './components/Header.js';
 import Portfolio from "./components/Portfolio.js";
 import Store from "./components/Store.js";
 
-//import './custom.css';
 import './style.css';
 import './index.css';
 

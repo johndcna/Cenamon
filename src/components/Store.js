@@ -1,12 +1,6 @@
 
-import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Routes, Route, Router } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./Navbar.js";
-import Home from "./Home.js";
-import About from "./About.js";
-import Products from "./Products.js";
-import ProductDetails from "./ProductDetails.js";
-import Cart from "./Cart.js";
 
 export default function Store() {
     const [cart, setCart] = useState([]);
@@ -49,20 +43,7 @@ export default function Store() {
         <>
             {<Navbar cart={cart} />}
             <div className="container">
-            {/* <Routes>
-                <Route exact path="/about" element={<About />} />
-                  <Route exact path="/products" element={<Products
-                    cart={cart}
-                    onProductAdd={handleProductAdd}
-                    onProductDelete={handleProductDelete}
-                  />} /> */}
-
-                {/*    <Route exact path="/" element={<Home />} />*/}
-                    
-                {/*    <Route path="/products/:id/*" element={<ProductDetails onProductAdd={handleProductAdd} />} />*/}
-                {/*    <Route exact path="cart" element={<Cart cart={cart} />} />*/}
-                {/* </Routes> */}
-
+      
             </div>
         </>
     );
