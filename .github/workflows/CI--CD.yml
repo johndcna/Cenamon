@@ -1,0 +1,17 @@
+name: CI-CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master # master environment
+      # - release # staging and production 
+
+jobs:
+
+  build-core-api:
+    uses: johndcna/reusable-workflows/.github/workflows/build-dotnet.yml@main
+    with:
+      dotnet_version: 8.x
+      artifact_name: 'Cenamon.WebAPI'
+      project_file: 'Cenamon/Cenamon.WebAPI.csproj'
