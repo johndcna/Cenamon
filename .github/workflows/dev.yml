@@ -1,0 +1,13 @@
+name: Dev
+  
+on:
+  workflow_dispatch:
+
+jobs:
+  test-reusable:
+
+    uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
+    with:
+      config-path: test
+    secrets: inherit
+      
