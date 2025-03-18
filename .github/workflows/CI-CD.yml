@@ -15,6 +15,7 @@ jobs:
       dotnet_version: 8.x
       artifact_name: 'Cenamon.WebAPI'
       project_file: 'Cenamon/Cenamon.WebAPI.csproj'
+      path: 'Cenamon/artifact/content'
       
   deploy-core-api:
     needs: [build-core-api]
