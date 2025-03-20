@@ -13,7 +13,7 @@ jobs:
     uses: johndcna/reusable-workflows/.github/workflows/build-dotnet.yml@main
     with:
       dotnet_version: 8.x
-      artifact_name: 'Cenamon.WebAPI'
+      artifact_name: ${{ vars.AZURE_WEBAPP_NAME }}
       project_file: 'Cenamon/Cenamon.WebAPI.csproj'
       path: 'Cenamon/artifact/content'
       
