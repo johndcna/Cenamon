@@ -2,26 +2,11 @@ name: Dev
   
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        type: string
-        required: true
-env:
-  deploy-a: ${{ vars.a }}
-  deploy-b: ${{ vars.b }}
+
 jobs:
-  do-something:
-    runs-on: ubuntu-latest
-    steps:
-    - name: test
-      run: |
-            echo "This is a fname value: ${{ inputs.fname }}"
-    environment: ${{ inputs.environment }}
-          
   test-reusable:
-    needs: do-something
+
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  ${{ env.deploy-a }}
-      path: ${{ needs.print.outputs.some_var }}
+      my-arg: top level reuser
       
