@@ -8,5 +8,5 @@ jobs:
 
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      my-arg: top level reuser
+      my-arg: ${{ vars.AZURE_WEBAPP_NAME }}
       
