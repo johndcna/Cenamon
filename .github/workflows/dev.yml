@@ -26,6 +26,6 @@ jobs:
   test-reusable:
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  ${{ env.deploy-a }}
+      fname:  ${{ $deploy-a }}
       path: ${{ needs.print.outputs.some_var }}
       
