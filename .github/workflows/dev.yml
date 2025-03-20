@@ -24,8 +24,6 @@ jobs:
           echo "another_var=$ANOTHER_VAR" >> $GITHUB_OUTPUT
           
   test-reusable:
-    needs:
-      - print
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
       fname:  ${{ env.deploy-a }}
