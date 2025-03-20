@@ -6,6 +6,6 @@ jobs:
   test-reusable:
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  ${{vars.AZURE_WEBAPP_NAME}}
+      fname:  'd'
       path: 'Cenamon/artifact/content'
       
