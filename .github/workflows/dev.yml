@@ -20,7 +20,7 @@ jobs:
         id: set-output-defaults
         run: |    
           # If workflow_dispatch, use inputs (left), if other trigger, use default env (right)
-          echo "build-and-verify=${{ github.event.inputs.build-and-verify || 'true' }}" >> $GITHUB_OUTPUT
+          echo "build-and-verify=${{ env.AZURE_WEBAPP_NAME || 'true' }}" >> $GITHUB_OUTPUT
   
   test-reusable:
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
