@@ -1,6 +1,6 @@
 name: Dev
 env:
-  SOME_VAR: ${{ var.AZURE_WEBAPP_NAME }}
+  SOME_VAR: ${{ vars.AZURE_WEBAPP_NAME }}
   ANOTHER_VAR: stuff_stuff
   
 on:
