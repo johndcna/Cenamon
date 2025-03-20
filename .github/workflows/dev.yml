@@ -11,11 +11,6 @@ env:
   deploy-b: ${{ vars.b }}
   
 jobs:
-  print:
-    runs-on: ubuntu-latest
-    outputs:
-      some_var: ${{ steps.step1.outputs.some_var }}
-      another_var: ${{ steps.step1.outputs.another_var }}  
   do-something:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
