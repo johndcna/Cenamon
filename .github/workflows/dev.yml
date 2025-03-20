@@ -1,7 +1,7 @@
 name: Dev
 env:
   SOME_VAR: ${{ vars.AZURE_WEBAPP_NAME }}
-  ANOTHER_VAR: stuff_stuff
+  ANOTHER_VAR: ${{ env.AZURE_WEBAPP_NAME }}
   
 on:
   workflow_dispatch:
