@@ -1,16 +1,24 @@
 name: Dev
-env:
-  SOME_VAR: ${{ vars.AZURE_WEBAPP_NAME }}
-  ANOTHER_VAR: ${{ env.AZURE_WEBAPP_NAME }}
   
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: string
+        required: true
+env:
+  deploy-a: ${{ vars.AZURE_WEBAPP_NAME  }}
+  deploy-b: ${{ vars.b }}
+  
 jobs:
   print:
     runs-on: ubuntu-latest
     outputs:
       some_var: ${{ steps.step1.outputs.some_var }}
       another_var: ${{ steps.step1.outputs.another_var }}  
+  do-something:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
       - name: Print inputs passed to the reusable workflow
         id: step1
@@ -25,6 +33,6 @@ jobs:
       - print
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  ${{ needs.print.outputs.some_var }}
+      fname:  ${{ env.deploy-a }}
       path: ${{ needs.print.outputs.some_var }}
       
