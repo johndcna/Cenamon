@@ -15,7 +15,7 @@ jobs:
     uses: johndcna/reusable-workflows/.github/workflows/build-dotnet.yml@main
     with:
       dotnet_version: 8.x
-      artifact_name: $APP_NAME
+      artifact_name: ${{env.APP_NAME}}
       project_file: 'Cenamon/Cenamon.WebAPI.csproj'
       path: 'Cenamon/artifact/content'
       
