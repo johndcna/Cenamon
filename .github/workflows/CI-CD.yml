@@ -6,11 +6,24 @@ on:
     branches:
       - master # master environment
       # - release # staging and production 
-env:
-  APP_NAME: ${{ inputs.AZURE_WEBAPP_NAME }}
+
 
 jobs:
-
+  test-variable:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate APP_NAME
+      run: |
+        ls -alFh
+        VARS_JSON='${{ toJson(vars) }}'
+        APP_NAME=$(echo "$VARS_JSON" | jq -r ".${{ inputs.target_app_service }}")
+        echo "::notice::APP_NAME=$APP_NAME"
+        echo "APP_NAME=$APP_NAME" >> $GITHUB_ENV     
+        
+    - name: Echo AZURE_WEBAPP_NAME
+      run: |
+            echo "This is a secret: ${{ env.AZURE_WEBAPP_NAME }}"
+  
   build-core-api:
     uses: johndcna/reusable-workflows/.github/workflows/build-dotnet.yml@main
     with:
