@@ -12,6 +12,8 @@ env:
 jobs:
   do-something:
     runs-on: ubuntu-latest
+    steps:
+    - name: test
     environment: ${{ inputs.environment }}
           
   test-reusable:
