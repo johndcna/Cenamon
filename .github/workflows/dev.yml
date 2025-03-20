@@ -2,29 +2,10 @@ name: Dev
 
 on:
   workflow_dispatch:
-    inputs:
-      build-and-verify:
-        description: 'Do a build and verify'
-        required: true
-        default: 'true'    
-
 jobs:
-
-  EnvSetup:
-    name: Setup Dynamic Environment Variables
-    runs-on: ubuntu-latest
-    outputs:
-      build-and-verify: ${{ env.AZURE_WEBAPP_NAME }}
-    steps:
-      - name: set outputs with default values
-        id: set-output-defaults
-        run: |    
-          # If workflow_dispatch, use inputs (left), if other trigger, use default env (right)
-          echo "build-and-verify=${{ github.event.inputs.build-and-verify || 'true' }}" >> $GITHUB_OUTPUT
-  
   test-reusable:
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  ${{needs.EnvSetup.outputs.build-and-verify}}
+      fname:  ${{env.AZURE_WEBAPP_NAME}}
       path: 'Cenamon/artifact/content'
       
