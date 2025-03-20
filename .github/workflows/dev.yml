@@ -3,9 +3,25 @@ name: Dev
 on:
   workflow_dispatch:
 jobs:
+  print:
+    runs-on: ubuntu-latest
+    outputs:
+      some_var: ${{ vars.AZURE_WEBAPP_NAME }}
+      another_var: ${{ vars.AZURE_WEBAPP_PUBLISH_PROFILE }} 
+    steps:
+      - name: Print inputs passed to the reusable workflow
+        id: step1
+        run: |
+          echo "some var: $SOME_VAR"
+          echo "some_var=$SOME_VAR" >> $GITHUB_OUTPUT
+          echo "another var: $ANOTHER_VAR"
+          echo "another_var=$ANOTHER_VAR" >> $GITHUB_OUTPUT
+          
   test-reusable:
+    needs:
+      - print
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
-      fname:  'd'
-      path: 'Cenamon/artifact/content'
+      fname:  ${{ needs.print.outputs.some_var }}
+      path: ${{ needs.print.outputs.some_var }}
       
