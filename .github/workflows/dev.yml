@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
+      run: |
+            echo "This is a fname value: ${{ inputs.fname }}"
     environment: ${{ inputs.environment }}
           
   test-reusable:
