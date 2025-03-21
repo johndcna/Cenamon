@@ -9,6 +9,5 @@ jobs:
     uses: johndcna/reusable-workflows/.github/workflows/test.yml@main
     with:
       config-path: test
-    secrets:
-      personal_access_token: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    secrets: inherit
       
