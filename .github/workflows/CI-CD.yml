@@ -9,26 +9,11 @@ on:
 
 
 jobs:
-  test-variable:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Generate APP_NAME
-      run: |
-        ls -alFh
-        VARS_JSON='${{ toJson(vars) }}'
-        AZURE_WEBAPP_NAME=$(echo "$VARS_JSON" | jq -r ".${{ inputs.target_app_service }}")
-        echo "::notice::AZURE_WEBAPP_NAME=$AZURE_WEBAPP_NAME"
-        echo "AZURE_WEBAPP_NAME=$AZURE_WEBAPP_NAME" >> $GITHUB_ENV     
-        
-    - name: Echo AZURE_WEBAPP_NAME
-      run: |
-            echo "This is a secret: ${{ env.AZURE_WEBAPP_NAME }}"
-  
   build-core-api:
     uses: johndcna/reusable-workflows/.github/workflows/build-dotnet.yml@main
     with:
       dotnet_version: 8.x
-      artifact_name: $APP_NAMEss
+      artifact_name: ${{vars.APP_NAME}}
       project_file: 'Cenamon/Cenamon.WebAPI.csproj'
       path: 'Cenamon/artifact/content'
       
