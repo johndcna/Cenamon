@@ -9,7 +9,7 @@ namespace CenaWebApi.Controllers
         private static readonly string[] Summaries = new[]
         {
             //"Test", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-             "Test", "Bracing", "Chilly"
+             "Test", "Bracing", "Chilly", "Hotty"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
