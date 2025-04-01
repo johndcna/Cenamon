@@ -83,6 +83,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ vars.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          app-name: ${{ vars.APP_NAME }}
+          publish-profile: ${{ vars.target_publish_profile }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
